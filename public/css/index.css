@@ -1,0 +1,17 @@
+.container-fluid.main {
+  padding: 0;
+  box-sizing: border-box;
+  padding-bottom: 25%;
+}
+.main {
+  padding: 0;
+  height: 250px;
+  overflow-y: auto;
+}
+.media {
+  box-sizing: border-box;
+  height: 120px;
+  border: 1px solid black;
+  margin: 0;
+
+}

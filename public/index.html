@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GetMod</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"> </script>
+    <script src="bower_components/angular/angular.min.js"> </script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+
+  <body ng-app="myapp" ng-controller="mycntrl">
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#"></a></li>
+
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"></a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid bg-success">
+      <h1 class="text-center">Fashion</h1>
+      <div class="row">
+
+        <div class="col-sm-3">
+
+        </div>
+
+        <div class="col-sm-6 main">
+          <a href="#" ng-repeat="data in data_fashion"><div class="media">
+            <div class="media-left">
+              <img src={{"images/"+data.image_url}} alt="" width="120px" height="120px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{data.heading}}</h4>
+              <p>{{data.desc}}</p>
+            </div>
+          </div></a>
+        </div>
+
+        <div class="col-sm-3">
+
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-warning">
+      <h1 class="text-center">Gadgets</h1>
+      <div class="row">
+
+        <div class="col-sm-3">
+
+        </div>
+
+        <div class="col-sm-6 main">
+          <a href="#" ng-repeat="data in data_gadget"><div class="media">
+            <div class="media-left">
+              <img src={{"images/"+data.image_url}} alt="" width="120px" height="120px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{data.heading}}</h4>
+              <p>{{data.desc}}</p>
+            </div>
+          </div></a>
+        </div>
+
+        <div class="col-sm-3">
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      var app = angular.module('myapp', []);
+      app.controller('mycntrl', function($scope,$http){
+        $http.get("fashion.php")
+        .then(function(response) {
+          $scope.data_fashion = response.data;
+        });
+        $http.get("gadget.php")
+        .then(function(response) {
+          $scope.data_gadget = response.data;
+        });
+      });
+    </script>
+  </body>
+</html>

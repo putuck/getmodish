@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fashion</title>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js">
+    </script>
+  </head>
+  <body ng-app="myapp" ng-controller="mycntrl">
+    <ul ng-repeat="data in data">
+      <li><img src="images/{{data.image_url}}" alt="" height="150px" width="200px"></li>
+    </ul>
+    <script>
+      var app = angular.module('myapp', []);
+      app.controller('mycntrl',function($scope, $http){
+        $http.get("/fashion")
+        .then(function(response) {
+          console.log(response);
+          $scope.data = response.data;
+        });
+      });
+    </script>
+  </body>
+</html>

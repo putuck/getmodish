@@ -1,0 +1,31 @@
+{
+  "name": "getmodish",
+  "version": "1.0.0",
+  "description": "Get Mod Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rajiv",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "mocha": "^3.4.2",
+    "mongoose": "^4.11.3"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.3",
+    "bootstrap": "^3.3.7",
+    "angular": "angularjs#^1.6.5",
+    "font-awesome": "^4.7.0"
+  }
+}

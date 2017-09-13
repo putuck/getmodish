@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>GetMod</title>
+      <script src="bower_components/jquery/dist/jquery.min.js"> </script>
+      <script src="bower_components/angular/angular.min.js"> </script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    </head>
+
+  <body ng-app="">
+    <div class="container" style="width:50%; margin:auto; margin-top:20px;">
+      <form action="{{'/admin/'+section}}" method="post">
+        <div class="form-group">
+          <label for="section">Select Section:</label>
+          <select name="section" ng-model="section" class="form-control">
+            <option value="fashion" selected>Fashion</option>
+            <option value="gadget">Gadgets</option>
+            <option value="cooking">Cooking</option>
+            <option value="health">Health</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="heading">Heading</label>
+          <input type="text" id="heading" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="image_url">Image URL</label>
+          <input type="text" id="image_url" class="form-control"">
+        </div>
+        <div class="form-group">
+          <label for="desc">Description</label>
+          <textarea id="desc" rows="5" class="form-control">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="source">Source </label>
+          <input type="text" id="source" value="" class="form-control"><br>
+        </div>
+        <div class="form-group">
+          <label for="keywords">Keywords</label>
+          <input type="text" id="keywords" value="" class="form-control"><br>
+        </div>
+        <input type="submit" name="" value="submit" style="display:block;margin:auto;">
+      </form>
+    </div>
+  </body>
+</html>
